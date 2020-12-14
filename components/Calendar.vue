@@ -1,4 +1,7 @@
 <template>
+<div>
+
+
   <div class="calendar_wrapper">
     <header class="calendar_header">
       <button class="button arrow-left absolute left" @click="changeMonth(0)"></button>
@@ -35,6 +38,13 @@
       </table>
     </main>
   </div>
+  <InputEvent 
+    :date="[currentDateOfMonth,
+            currentMonthId,
+            currentYear]"
+
+  />
+</div>
 </template>
 
 <script>
@@ -66,6 +76,7 @@ export default {
       ],
       currentMonthId: 11,
       currentYear: 2020,
+      currentDateOfMonth: -1,
     }
   },
   methods:{
@@ -105,7 +116,7 @@ export default {
       }
     },
     addEvent(dayOfWeek, numberOfWeek){
-      console.log(dayOfWeek, ' ', numberOfWeek);
+      this.currentDateOfMonth = this.fillDays(dayOfWeek, numberOfWeek);
     }
   }
 }

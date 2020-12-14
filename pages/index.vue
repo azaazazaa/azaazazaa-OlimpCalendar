@@ -5,9 +5,7 @@
 </template>
 
 <script>
-export default {}
+import InputEvent from '../components/InputEvent.vue'
+export default {
+  components: { InputEvent },}
 </script>
-
-<style lang="scss" scoped>
-
-</style>
